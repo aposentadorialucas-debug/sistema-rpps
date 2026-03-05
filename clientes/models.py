@@ -16,7 +16,6 @@ class Cliente(models.Model):
     nome = models.CharField(max_length=200)
     sexo = models.CharField(max_length=1, choices=SEXO_CHOICES)
     data_nascimento = models.DateField()
-
     cpf = models.CharField(max_length=14, unique=True, blank=True, null=True)
     rg = models.CharField(max_length=20, blank=True, null=True)
     endereco = models.CharField(max_length=255, blank=True, null=True)
