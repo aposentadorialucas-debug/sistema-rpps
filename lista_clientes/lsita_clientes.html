@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Clientes Cadastrados</h2>
+
+<input type="text" id="buscar" placeholder="🔍 Buscar...">
+
+<table border="1" width="100%" id="tabela">
+<tr>
+    <th>Nome</th>
+    <th>CPF</th>
+    <th>Cargo</th>
+</tr>
+
+{% for cliente in clientes %}
+<tr>
+    <td>{{ cliente.nome_completo }}</td>
+    <td>{{ cliente.cpf }}</td>
+    <td>{{ cliente.cargo_atual }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<script>
+document.getElementById("buscar").addEventListener("keyup", function() {
+    let filtro = this.value.toLowerCase();
+    let linhas = document.querySelectorAll("#tabela tr");
+
+    linhas.forEach(function(linha, index) {
+        if(index === 0) return;
+        linha.style.display = linha.innerText.toLowerCase().includes(filtro) ? "" : "none";
+    });
+});
+</script>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+<h1>Lista de Clientes</h1>
+
+<a href="/clientes/cadastro/">Novo Cliente</a>
+
+<ul>
+    {% for cliente in clientes %}
+        <li>{{ cliente.nome }} - {{ cliente.cpf }}</li>
+    {% endfor %}
+</ul>

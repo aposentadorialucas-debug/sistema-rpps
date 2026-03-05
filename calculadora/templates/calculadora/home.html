@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Selecionar Cliente para Cálculo</h2>
+
+<ul class="clientes-lista">
+    {% for cliente in clientes %}
+        <li class="cliente-item">
+            {{ cliente.nome }}   -
+            <a href="{% url 'calcular_aposentadoria' cliente.id %}">
+                  🧮 Calcular
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
+<style>
+/* Lista de clientes */
+.clientes-lista {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Cada item com tarja branca */
+.cliente-item {
+    background-color: white;   /* Tarja branca */
+    padding: 10px 15px;
+    margin-bottom: 10px;      /* Espaço entre tarjas */
+    border-radius: 8px;       /* Cantos arredondados */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra leve */
+}
+</style>
+
+{% endblock %}

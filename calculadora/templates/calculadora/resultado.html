@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h2>Calculadora de Aposentadoria</h2>
+
+    <p><strong>Cliente:</strong> {{ cliente.nome }}</p>
+    <p><strong>Cargo:</strong> {{ cliente.get_cargo_atual_display }}</p>
+
+    <hr>
+
+    <p>Idade Atual: {{ anos_idade }} anos</p>
+    <p>Tempo de Contribuição: {{ anos_contrib }} anos</p>
+
+    <hr>
+
+    <h3>Regras Disponíveis:</h3>
+
+    {% for regra in regras %}
+        <div style="margin-bottom:20px; padding:15px; background:#d8b4f8; border-radius:8px;">
+            
+            <h4>{{ regra.nome }}</h4>
+
+            {% if regra.apto %}
+                <p style="color:green;">
+                    <strong>✔ Já pode se aposentar</strong>
+                </p>
+            {% else %}
+                <p style="color:red;">
+                    <strong>✖ Ainda não cumpre</strong>
+                </p>
+                <p>Faltam {{ regra.falta_dias }}</p>
+                <p><strong>Data estimada:</strong> {{ regra.data_prevista }}</p>
+            {% endif %}
+
+        </div>
+    {% empty %}
+        <p>Nenhuma regra disponível.</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

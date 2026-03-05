@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="dashboard-cards">
+
+    <div class="card">
+        <h3>Total de Clientes</h3>
+        <p>{{ total_clientes }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Clientes Aptos</h3>
+        <p>{{ clientes_aptos }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Até 2 anos</h3>
+        <p>{{ clientes_quase_aptos }}</p>
+    </div>
+
+</div>
+{% endblock %}

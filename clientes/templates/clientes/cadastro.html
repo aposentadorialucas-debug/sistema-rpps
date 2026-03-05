@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container-central">
+
+    <div class="card-branco">
+        <h2>Cadastro de Cliente</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="linha-form">
+                <label>Nome</label>
+                {{ form.nome }}
+            </div>
+
+            <div class="linha-form">
+                <label>Sexo</label>
+                {{ form.sexo }}
+            </div>
+
+            <div class="linha-form">
+                <label>Data de nascimento</label>
+                {{ form.data_nascimento }}
+            </div>
+
+            <div class="linha-form">
+                <label>CPF</label>
+                {{ form.cpf }}
+            </div>
+
+            <div class="linha-form">
+                <label>RG</label>
+                {{ form.rg }}
+            </div>
+
+            <div class="linha-form">
+                <label>Endereço</label>
+                {{ form.endereco }}
+            </div>
+
+            <div class="linha-form">
+                <label>Senha GOV</label>
+                {{ form.senha_gov }}
+            </div>
+
+            <div class="linha-form">
+                <label>Data ingresso serviço público</label>
+                {{ form.data_ingresso_servico_publico }}
+            </div>
+
+            <div class="linha-form">
+                <label>Data ingresso cargo</label>
+                {{ form.data_ingresso_cargo }}
+            </div>
+
+            <div class="linha-form">
+                <label>Cargo atual</label>
+                {{ form.cargo_atual }}
+            </div>
+
+            <div class="linha-form">
+                <label>Tempo atividade especial</label>
+                {{ form.tempo_atividade_especial }}
+            </div>
+
+            <div class="linha-form">
+    <label>Invalidez</label>
+    {{ form.invalidez }}
+</div>
+
+            <div class="botoes">
+                <button type="submit" class="btn-primary">CADASTRAR</button>
+                <button type="reset" class="btn-secondary">LIMPAR</button>
+            </div>
+            
+
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

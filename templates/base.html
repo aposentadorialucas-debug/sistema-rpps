@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema RPPS</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="{% url 'dashboard_home' %}" class="nav-btn">Dashboard</a>
+        <a href="{% url 'clientes_home' %}" class="nav-btn">Clientes</a>
+        <a href="{% url 'cadastrar_cliente' %}" class="nav-btn">Novo Cadastro</a>
+        <a href="{% url 'calculadora_home' %}" class="nav-btn">Calculadora</a>
+        <a href="{% url 'lista_leis' %}" class="nav-btn">Leis</a>
+    </div>
+
+    <div class="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+.grid-leis {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.coluna-leis {
+    background-color: #d8b4f8; /* roxo claro */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.coluna-leis h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.coluna-leis ul {
+    list-style: none;
+    padding: 0;
+}
+
+.coluna-leis li {
+    margin-bottom: 8px;
+}
+
+.coluna-leis a {
+    text-decoration: none;
+    color: black;
+}
+
+.coluna-leis a:hover {
+    text-decoration: underline;
+}
+</style>
+
+<div class="container">
+    <h2 style="text-align:center; margin-bottom:30px;">Base Legal RPPS por Categoria</h2>
+
+    <div class="grid-leis">
+
+        <!-- PROFESSOR -->
+        <div class="coluna-leis">
+            <h3>Professor</h3>
+            <ul>
+                <li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art40" target="_blank">CF/88 – Art. 40 §5º</a></li>
+                <li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc41.htm" target="_blank">EC 41/2003</a></li>
+                <li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm" target="_blank">EC 103/2019</a></li>
+                <li><a href="https://www.al.sp.gov.br/repositorio/legislacao/emenda.constitucional/2020/emenda.constitucional-49-06.03.2020.html" target="_blank">EC Estadual 49/2020</a></li>
+                <li><a href="https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2020/lei.complementar-1354-06.03.2020.html" target="_blank">LC 1.354/2020</a></li>
+            </ul>
+        </div>
+
+        <!-- SERVIDOR PÚBLICO -->
+        <div class="coluna-leis">
+            <h3>Servidor Público</h3>
+            <ul>
+                <li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art37" target="_blank">CF/88 – Art. 37</a></li>
+                <li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art40" target="_blank">CF/88 – Art. 40</a></li>
+                <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l9717.htm" target="_blank">Lei 9.717/1998</a></li>
+                <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.887.htm" target="_blank">Lei 10.887/2004</a></li>
+                <li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm" target="_blank">EC 103/2019</a></li>
+                <li><a href="https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2007/lei.complementar-1010-01.06.2007.html" target="_blank">LC 1.010/2007 (SPPREV)</a></li>
+            </ul>
+        </div>
+
+        <!-- POLICIAL E BOMBEIRO -->
+        <div class="coluna-leis">
+            <h3>Policial e Bombeiro</h3>
+            <ul>
+                <li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art42" target="_blank">CF/88 – Art. 42</a></li>
+                <li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art142" target="_blank">CF/88 – Art. 142 §3º</a></li>
+                <li><a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del0667.htm" target="_blank">Decreto-Lei 667/1969</a></li>
+                <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13954.htm" target="_blank">Lei 13.954/2019</a></li>
+                <li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm" target="_blank">EC 103/2019</a></li>
+                <li><a href="https://www.al.sp.gov.br/repositorio/legislacao/lei/1992/lei-7698-06.01.1992.html" target="_blank">Lei 7.698/1992</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
