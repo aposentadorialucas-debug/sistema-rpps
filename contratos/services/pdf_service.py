@@ -1,22 +1,18 @@
-import os
 from io import BytesIO
 from datetime import datetime
 
-from django.template.loader import get_template
-from django.conf import settings
+from django.template.loader import render_to_string
 
 from reportlab.lib.pagesizes import A4
-from reportlab.platypus import SimpleDocTemplate
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.units import cm
-
-from xhtml2pdf import pisa
 
 
 def gerar_pdf_contrato(cliente, tipo):
 
     buffer = BytesIO()
 
-    # Mapeamento dos templates
     templates = {
         "procuracao": "contratos/procuracao.html",
         "abono": "contratos/abono.html",
@@ -31,8 +27,6 @@ def gerar_pdf_contrato(cliente, tipo):
     if not template_path:
         raise ValueError("Tipo de contrato inválido")
 
-    template = get_template(template_path)
-
     contexto = {
         "cliente": cliente,
         "data_hoje": datetime.now().strftime("%d/%m/%Y"),
@@ -42,14 +36,24 @@ def gerar_pdf_contrato(cliente, tipo):
         "percentual_exito": "10%",
     }
 
-    html = template.render(contexto)
+    html = render_to_string(template_path, contexto)
 
-    pisa.CreatePDF(
-        html,
-        dest=buffer,
-        encoding='UTF-8'
+    doc = SimpleDocTemplate(
+        buffer,
+        pagesize=A4,
+        rightMargin=2*cm,
+        leftMargin=2*cm,
+        topMargin=2*cm,
+        bottomMargin=2*cm,
     )
 
-    buffer.seek(0)
+    styles = getSampleStyleSheet()
+    story = []
 
+    story.append(Paragraph(html, styles['Normal']))
+    story.append(Spacer(1, 12))
+
+    doc.build(story)
+
+    buffer.seek(0)
     return buffer
