@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+@page {
+    size: A4;
+    margin: 2.5cm 2cm 2.5cm 3cm;
+}
+
+body {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.titulo {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.assinatura {
+    margin-top: 60px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="titulo">
+PROCURAÇÃO
+</div>
+
+<p>
+Por este instrumento particular de mandato.
+</p>
+
+<p>
+<strong>OUTORGANTE:</strong> {{ cliente.nome }}, {{ cliente.nacionalidade|default:"Brasileiro(a)" }}, {{ cliente.estado_civil|default:"" }}, {{ cliente.cargo_atual|default:"" }}, portador(a) da cédula de identidade RG nº {{ cliente.rg|default:"" }} e do CPF nº {{ cliente.cpf|default:"" }}, residente e domiciliado(a) à {{ cliente.endereco|default:"" }}{% if cliente.bairro %}, {{ cliente.bairro }}{% endif %}{% if cliente.cidade %}, {{ cliente.cidade }}{% endif %}{% if cliente.estado %}/{{ cliente.estado }}{% endif %}{% if cliente.cep %}, CEP {{ cliente.cep }}{% endif %}.
+</p>
+
+<p>
+<strong>OUTORGADOS:</strong>
+</p>
+
+<p>
+Nicolas da Costa Moreira Galli, brasileiro, solteiro, autônomo, portador do RG nº 54.270.479-1, inscrito no CPF sob nº 363.732.138-62, residente e domiciliado à Rua 13 RF, nº 72, Residencial Florença, Rio Claro, São Paulo, CEP: 13506-282.
+</p>
+
+<p>
+Lucas Cardoso Ribeiro, brasileiro, solteiro, autônomo, portador do RG nº 54.556.346-X, inscrito no CPF sob nº 353.293.128-17, residente e domiciliado à Rua 1A, nº135, Vilas do Sobrado, Rio Claro, São Paulo, CEP 13505-210.
+</p>
+
+<p>
+<strong>PODERES:</strong>
+</p>
+
+<p>
+Pelo presente instrumento, a Outorgante nomeia e constitui os Outorgados, em conjunto ou separadamente, com plenos poderes para representá-la perante <strong>{{ cliente.orgao_responsavel }}</strong>, para todos os fins necessários, inclusive, mas não se limitando a:
+</p>
+
+<p>
+• Solicitar, requerer, retirar ou acompanhar a emissão de documentos, certidões, declarações, atestados ou quaisquer outros papéis inerentes à função pública da Outorgante;<br>
+• Assinar requerimentos, protocolos, recibos, declarações, termos de retirada ou entrega de documentos;<br>
+• Obter informações, realizar consultas, acompanhar trâmites administrativos, receber intimações ou comunicações, bem como acompanhar ou promover diligências necessárias;<br>
+• Dar recibo, dar quitação ou assinar qualquer documento relacionado à representação conferida;
+</p>
+Rio Claro/SP, {{ data_hoje }}
+</p>
+
+<div class="assinatura">
+
+<br>________________________________________________________
+<p>{{ cliente.nome }} CPF nº: {{ cliente.cpf }} - RG nº: {{ cliente.rg }}</p>
+
+</div>
+
+</body>
+</html>

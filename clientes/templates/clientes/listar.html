@@ -15,10 +15,8 @@
                 <th>Nome</th>
                 <th>Nascimento</th>
                 <th>CPF</th>
-                <th>RG</th>
-                <th>Endereço</th>
-                <th>Ingresso Serviço Público</th>
                 <th>Cargo</th>
+                <th>Ingresso</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -26,21 +24,19 @@
             {% for cliente in clientes %}
             <tr>
                 <td>{{ cliente.nome }}</td>
-<td>{{ cliente.data_nascimento }}</td>
-<td>{{ cliente.cpf }}</td>
-<td>{{ cliente.rg }}</td>
-<td>{{ cliente.endereco }}</td>
-<td>{{ cliente.data_ingresso_servico_publico }}</td>
-<td>{{ cliente.get_cargo_atual_display }}</td>
+                <td>{{ cliente.data_nascimento }}</td>
+                <td>{{ cliente.cpf }}</td>
+                <td>{{ cliente.get_cargo_atual_display }}</td>
+                <td>{{ cliente.data_ingresso_servico_publico }}</td>
+
                 <td>
-                    <a href="{% url 'editar_cliente' cliente.id %}">✏️</a>
-                    <a href="{% url 'excluir_cliente' cliente.id %}">🗑️</a>
-                    <a href="{% url 'calcular_aposentadoria' cliente.id %}">📊 Calcular</a>
+                    <a href="{% url 'clientes:editar' cliente.id %}">✏️</a>
+                    <a href="{% url 'calculadora:calcular' cliente.id %}">🧮</a>
                 </td>
             </tr>
             {% empty %}
             <tr>
-                <td colspan="8">Nenhum cliente encontrado.</td>
+                <td colspan="6">Nenhum cliente encontrado.</td>
             </tr>
             {% endfor %}
         </tbody>

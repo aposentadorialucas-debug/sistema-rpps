@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+@page {
+    size: A4;
+    margin: 2.5cm 2cm 2.5cm 3cm;
+}
+
+body {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.titulo {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.assinatura {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.direita {
+    text-align: right;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="titulo">
+DECLARAÇÃO DE HIPOSSUFICIÊNCIA
+</div>
+
+<p>
+{{ cliente.nome }}, Brasileiro(a), {{ cliente.estado_civil|default:"" }}, {{ cliente.profissao|default:"" }}, portador(a) da cédula de identidade RG nº {{ cliente.rg|default:"" }} e do CPF nº {{ cliente.cpf|default:"" }}, residente e domiciliado(a) na {{ cliente.endereco|default:"" }}{% if cliente.bairro %}, {{ cliente.bairro }}{% endif %}{% if cliente.cidade %}, {{ cliente.cidade }}{% endif %}{% if cliente.estado %}/{{ cliente.estado }}{% endif %}{% if cliente.cep %}, CEP {{ cliente.cep }}{% endif %}, DECLARO, para todos os fins de direito e sob as penas da lei, que não tenho condições de arcar com as despesas inerentes ao presente processo, sem prejuízo do meu sustento e de minha família, necessitando, portanto, da GRATUIDADE DA JUSTIÇA, nos termos do art. 98 e seguintes da Lei 13.105/2015 (Código de Processo Civil). Requeiro, ainda, que o benefício abranja a todos os atos do processo, inclusive despesas periciais e sucumbenciais.
+</p>
+
+<p>
+Por ser expressão da verdade, assino e rogo a presente declaração, sob as penas da Lei.
+</p>
+
+<br><br>
+
+<p class="direita">
+Rio Claro/SP, {{ data_hoje }}
+</p>
+
+<div class="assinatura">
+
+
+<p>________________________________________</p>
+CONTRATANTE: </p> {{ cliente.nome }} </p> CPF nº {{ cliente.cpf|default:"" }}</p> 
+
+<br><br>
+
+</div>
+
+</body>
+</html>

@@ -78,8 +78,17 @@ body::before {
 /* ============================= */
 
 .container {
-    background: transparent;
-    padding: 20px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:10px;
+
+    max-width:1200px;
+
+    margin:auto;
+
 }
 
 
@@ -204,4 +213,36 @@ label {
 
 .card-branco {
     background-color: transparent; /* tira o fundo branco geral */
+}
+
+.regras-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.regra-card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.apto{
+    color:green;
+    font-weight:bold;
+}
+
+.nao-apto{
+    color:red;
+    font-weight:bold;
+}
+
+.card-servidor{
+    background:#5b2ca0;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
 }

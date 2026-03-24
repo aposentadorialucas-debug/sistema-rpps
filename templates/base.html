@@ -1,24 +1,42 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+
 <head>
-    <title>Sistema RPPS</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sistema RPPS</title>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 </head>
+
 <body>
 
-    <div class="navbar">
-        <a href="{% url 'dashboard_home' %}" class="nav-btn">Dashboard</a>
-        <a href="{% url 'clientes_home' %}" class="nav-btn">Clientes</a>
-        <a href="{% url 'cadastrar_cliente' %}" class="nav-btn">Novo Cadastro</a>
-        <a href="{% url 'calculadora_home' %}" class="nav-btn">Calculadora</a>
-        <a href="{% url 'lista_leis' %}" class="nav-btn">Leis</a>
-    </div>
+<div class="navbar">
 
-    <div class="main-content">
-        {% block content %}
-        {% endblock %}
-    </div>
+    <a href="{% url 'dashboard_home' %}" class="nav-btn">Dashboard</a>
+
+    <a href="{% url 'clientes:lista' %}" class="nav-btn">Clientes</a>
+
+    <a href="{% url 'clientes:novo' %}" class="nav-btn">Novo Cadastro</a>
+
+    <a href="{% url 'calculadora:home' %}" class="nav-btn">Calculadora</a>
+
+    <a href="{% url 'lista_leis' %}" class="nav-btn">Leis</a>
+
+    <a href="{% url 'contratos:lista' %}" class="nav-btn">Contratos</a>
+
+</div>
+
+<div class="main-content">
+
+{% block content %}
+{% endblock %}
+
+</div>
 
 </body>
 </html>

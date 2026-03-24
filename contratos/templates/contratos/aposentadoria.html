@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+@page {
+    size: A4;
+    margin: 2.5cm 2cm 2.5cm 3cm;
+}
+
+body {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.titulo {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.clausula {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.assinatura {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.direita {
+    text-align: right;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="titulo">
+CONTRATO DE PRESTAÇÃO DE SERVIÇOS
+</div>
+
+<p>
+Pelo presente instrumento particular, devidamente formalizado entre as partes, e em estrita observância às normas legais aplicáveis, especialmente no âmbito do Regime Próprio de Previdência Social (RPPS),, de um lado GALLI E MOREIRA – Escritório de Serviços Previdenciários, inscrito no CNPJ nº 47.172.618/0001-00, com sede na cidade de Rio Claro/SP, doravante denominado CONTRATADA, e de outro lado {{ cliente.nome }}, inscrito no CPF nº {{ cliente.cpf }}, profissão {{ cliente.cargo_atual|default:"" }}, residente e domiciliado em {{ cliente.endereco|default:"" }}{% if cliente.bairro %}, {{ cliente.bairro }}{% endif %}{% if cliente.cidade %}, {{ cliente.cidade }}{% endif %}{% if cliente.estado %}/{{ cliente.estado }}{% endif %}{% if cliente.cep %}, CEP {{ cliente.cep }}{% endif %}, doravante denominado CONTRATANTE, têm entre si justo e contratado o seguinte:
+</p>
+
+<div class="clausula">
+CLÁUSULA 1 – DO OBJETO
+</div>
+
+<p>
+A presente contratação tem por objeto a prestação de serviços de assessoria, consultoria e acompanhamento administrativo perante o Regime Próprio de Previdência Social – RPPS, visando à obtenção, revisão ou restabelecimento de benefícios previdenciários administrativos.
+</p>
+
+<div class="clausula">
+CLÁUSULA 2 – DAS OBRIGAÇÕES DA CONTRATADA
+</div>
+
+<p>
+A CONTRATADA compromete-se a:
+</p>
+
+<p>
+1. Realizar o protocolo, acompanhamento e representação administrativa do CONTRATANTE junto ao RPPS.<br>
+2. Orientar quanto à documentação necessária e analisar os requisitos legais para a concessão do benefício.<br>
+3. Manter o CONTRATANTE informado sobre o andamento do processo.
+</p>
+
+<div class="clausula">
+CLÁUSULA 3 – DAS OBRIGAÇÕES DO CONTRATANTE
+</div>
+
+<p>
+O CONTRATANTE obriga-se a:
+</p>
+
+<p>
+1. Fornecer todos os documentos e informações necessárias de forma verdadeira e tempestiva.<br>
+2. Realizar o pagamento dos valores pactuados conforme estipulado neste contrato.<br>
+3. Manter contato atualizado com a CONTRATADA durante todo o processo.
+</p>
+
+<div class="clausula">
+CLÁUSULA 4 – DA REMUNERAÇÃO
+</div>
+
+<p>
+Pelos serviços ora contratados, o CONTRATANTE pagará à CONTRATADA:
+</p>
+
+<p>
+a) o equivalente a 2 (dois) salários do benefício concedido, a título de honorários de êxito, devidos após a concessão administrativa;<br>
+b) 30% (trinta por cento) dos valores atrasados relativos ao benefício, caso existam, devidos após 3 (três) meses da concessão.
+</p>
+
+<p>
+Os valores deverão ser pagos no ato do recebimento pelo CONTRATANTE.
+</p>
+
+<div class="clausula">
+CLÁUSULA 5 – DA MULTA
+</div>
+
+<p>
+Fica estipulada multa no valor de 3 (três) salários mínimos vigentes em caso de:
+</p>
+
+<p>
+• Descumprimento das obrigações financeiras previstas neste contrato;<br>
+• Desistência do CONTRATANTE após o início dos serviços;<br>
+• Contratação de terceiro para concluir o processo sem autorização expressa da CONTRATADA.
+</p>
+
+<div class="clausula">
+CLÁUSULA 6 – DA VIGÊNCIA
+</div>
+
+<p>
+O presente contrato entra em vigor na data de sua assinatura e permanece válido até a conclusão definitiva do processo administrativo perante o RPPS.
+</p>
+
+<div class="clausula">
+CLÁUSULA 7 – DA RESCISÃO
+</div>
+
+<p>
+A rescisão poderá ocorrer por iniciativa de qualquer das partes, sem necessidade de aviso prévio, desde que respeitadas as obrigações financeiras previstas neste contrato, inclusive a multa mencionada na Cláusula 5.
+</p>
+
+<div class="clausula">
+CLÁUSULA 8 – DA PROTEÇÃO DE DADOS (LGPD)
+</div>
+
+<p>
+As partes comprometem-se a cumprir a Lei Geral de Proteção de Dados – LGPD (Lei nº 13.709/2018), especialmente quanto ao tratamento de dados pessoais fornecidos para a execução deste contrato.
+</p>
+
+<p>
+1. A CONTRATADA utilizará os dados pessoais do CONTRATANTE exclusivamente para fins relacionados aos serviços contratados.<br>
+2. Os dados poderão ser compartilhados apenas com órgãos públicos, RPPS, ou terceiros estritamente necessários ao cumprimento do objeto contratual.<br>
+3. O CONTRATANTE poderá solicitar, a qualquer momento, acesso, correção ou eliminação de seus dados.<br>
+4. A CONTRATADA adotará medidas técnicas e administrativas para proteger os dados contra acesso não autorizado.
+</p>
+
+<div class="clausula">
+CLÁUSULA 9 – DA CONFIDENCIALIDADE
+</div>
+
+<p>
+As partes comprometem-se a manter absoluto sigilo e confidencialidade sobre todas as informações compartilhadas.
+</p>
+
+<div class="clausula">
+CLÁUSULA 10 – DA RESPONSABILIDADE
+</div>
+
+<p>
+A CONTRATADA atuará com diligência, profissionalismo e observância das normas aplicáveis.
+</p>
+
+<p>
+A CONTRATADA não será responsável por:
+</p>
+
+<p>
+1. Informações inverídicas fornecidas pelo CONTRATANTE;<br>
+2. Decisões ou atrasos do RPPS;<br>
+3. Prejuízos decorrentes de caso fortuito ou força maior.
+</p>
+
+<div class="clausula">
+CLÁUSULA 11 – DO FORO
+</div>
+
+<p>
+Para dirimir quaisquer controvérsias oriundas deste contrato, as partes elegem o Foro da Comarca de Rio Claro/SP.
+</p>
+
+
+<p class="direita">
+Rio Claro/SP, {{ data_hoje }}
+</p>
+<br><br>
+<div class="assinatura">
+
+<p>________________________________________</p>
+<p>Galli & Moreira Assessoria Previdenciária - CNPJ: 47.172.618/0001-00</p>
+
+<br><br>
+
+<p>________________________________________</p>
+CONTRATANTE: </p> {{ cliente.nome }} </p> CPF nº {{ cliente.cpf|default:"" }}</p> 
+
+</div>
+
+</body>
+</html>

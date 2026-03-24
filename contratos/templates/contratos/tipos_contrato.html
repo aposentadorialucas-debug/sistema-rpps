@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 style="text-align:center; margin-bottom:30px;">
+    📄 Contratos de {{ cliente.nome }}
+</h2>
+
+<div style="max-width: 700px; margin: auto;">
+
+    <!-- PROCURACAO -->
+    <div style="background:#fff; padding:20px; margin-bottom:20px; border-radius:15px;">
+        <span>Procuração</span>
+        <a href="{% url 'contratos:gerar' cliente.id 'procuracao' %}" target="_blank"
+           style="float:right; background:green; color:#fff; padding:8px 20px; border-radius:10px; text-decoration:none;">
+           🖨 Gerar
+        </a>
+    </div>
+    
+
+    <!-- ABONO -->
+    <div style="background:#fff; padding:20px; margin-bottom:20px; border-radius:15px;">
+        <span>Abono de Permanência</span>
+        <a href="{% url 'contratos:gerar' cliente.id 'abono' %}" target="_blank"
+           style="float:right; background:green; color:#fff; padding:8px 20px; border-radius:10px; text-decoration:none;">
+           🖨 Gerar
+        </a>
+    </div>
+
+    <!-- APOSENTADORIA -->
+    <div style="background:#fff; padding:20px; margin-bottom:20px; border-radius:15px;">
+        <span>Aposentadoria</span>
+        <a href="{% url 'contratos:gerar' cliente.id 'aposentadoria' %}" target="_blank"
+           style="float:right; background:green; color:#fff; padding:8px 20px; border-radius:10px; text-decoration:none;">
+           🖨 Gerar
+        </a>
+    </div>
+
+    <!-- PLANEJAMENTO -->
+    <div style="background:#fff; padding:20px; margin-bottom:20px; border-radius:15px;">
+        <span>Planejamento Previdenciário</span>
+        <a href="{% url 'contratos:gerar' cliente.id 'planejamento' %}" target="_blank"
+           style="float:right; background:green; color:#fff; padding:8px 20px; border-radius:10px; text-decoration:none;">
+           🖨 Gerar
+        </a>
+    </div>
+
+    <!-- REVISÃO -->
+    <div style="background:#fff; padding:20px; margin-bottom:20px; border-radius:15px;">
+        <span>Revisão</span>
+        <a href="{% url 'contratos:gerar' cliente.id 'revisao' %}" target="_blank"
+           style="float:right; background:green; color:#fff; padding:8px 20px; border-radius:10px; text-decoration:none;">
+           🖨 Gerar
+        </a>
+    </div>
+
+    <!-- HIPOSSUFICIÊNCIA -->
+    <div style="background:#fff; padding:20px; margin-bottom:20px; border-radius:15px;">
+        <span>Declaração de Hipossuficiência</span>
+        <a href="{% url 'contratos:gerar' cliente.id 'hipossuficiencia' %}" target="_blank"
+           style="float:right; background:green; color:#fff; padding:8px 20px; border-radius:10px; text-decoration:none;">
+           🖨 Gerar
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}

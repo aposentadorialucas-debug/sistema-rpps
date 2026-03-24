@@ -1,55 +1,55 @@
-from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Cliente
 from .forms import ClienteForm
-from django.db.models import Q
 
-@login_required
 
-def listar_clientes(request):
-    query = request.GET.get('q')
-    clientes = Cliente.objects.all()
+def lista_clientes(request):
 
-    if query:
-        clientes = clientes.filter(
-            Q(nome__icontains=query) |
-            Q(cpf__icontains=query) |
-            Q(rg__icontains=query) |
-            Q(cargo_atual__icontains=query)
-        )
+    busca = request.GET.get('q')
+
+    if busca:
+        clientes = Cliente.objects.filter(
+            nome__icontains=busca
+        ).order_by('nome')
+    else:
+        clientes = Cliente.objects.all().order_by('nome')
 
     return render(request, 'clientes/listar.html', {
         'clientes': clientes
     })
 
 
-def cadastrar_cliente(request):
+def cadastro_cliente(request):
+
     if request.method == 'POST':
         form = ClienteForm(request.POST)
+
         if form.is_valid():
             form.save()
-            return redirect('listar_clientes')
+            return redirect('clientes:lista')
+
     else:
         form = ClienteForm()
 
-    return render(request, 'clientes/cadastro.html', {'form': form})
+    return render(request, 'clientes/cadastro.html', {
+        'form': form
+    })
 
 
-def editar_cliente(request, id):
-    cliente = get_object_or_404(Cliente, id=id)
+def editar_cliente(request, cliente_id):
+
+    cliente = get_object_or_404(Cliente, id=cliente_id)
 
     if request.method == 'POST':
         form = ClienteForm(request.POST, instance=cliente)
+
         if form.is_valid():
             form.save()
-            return redirect('calcular_aposentadoria', id=cliente.id)
+            return redirect('clientes:lista')
+
     else:
         form = ClienteForm(instance=cliente)
 
-    return render(request, 'clientes/cadastro.html', {'form': form})
-
-
-def excluir_cliente(request, id):
-    cliente = get_object_or_404(Cliente, id=id)
-    cliente.delete()
-    return redirect('listar_clientes')
+    return render(request, 'clientes/cadastro.html', {
+        'form': form
+    })

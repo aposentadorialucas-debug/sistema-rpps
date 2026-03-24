@@ -1,0 +1,12 @@
+<h2>Selecionar Cliente</h2>
+
+<ul>
+{% for cliente in clientes %}
+    <li>
+        {{ cliente.nome_completo }}
+        <a href="{% url 'selecionar_contrato' cliente.id %}">
+            Gerar Contrato 📄
+        </a>
+    </li>
+{% endfor %}
+</ul>

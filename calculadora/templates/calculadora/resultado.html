@@ -1,43 +1,149 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
 {% block content %}
 
-<div class="container">
-    <h2>Calculadora de Aposentadoria</h2>
+<div style="
+background:white;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
 
-    <p><strong>Cliente:</strong> {{ cliente.nome }}</p>
-    <p><strong>Cargo:</strong> {{ cliente.get_cargo_atual_display }}</p>
+width:fit-content;
+min-width:600px;
+max-width:700px;
+">
 
-    <hr>
+<h2>{{ cliente.nome }}</h2>
 
-    <p>Idade Atual: {{ anos_idade }} anos</p>
-    <p>Tempo de Contribuição: {{ anos_contrib }} anos</p>
+<p>
+<strong>Cargo:</strong>
+{{ cliente.cargo_atual|default:"Não informado" }}
+</p>
 
-    <hr>
+<p>
+<strong>Sexo:</strong> {{ cliente.get_sexo_display }}
+</p>
 
-    <h3>Regras Disponíveis:</h3>
+<hr>
 
-    {% for regra in regras %}
-        <div style="margin-bottom:20px; padding:15px; background:#d8b4f8; border-radius:8px;">
-            
-            <h4>{{ regra.nome }}</h4>
+<h3>Tempos Apurados</h3>
 
-            {% if regra.apto %}
-                <p style="color:green;">
-                    <strong>✔ Já pode se aposentar</strong>
-                </p>
-            {% else %}
-                <p style="color:red;">
-                    <strong>✖ Ainda não cumpre</strong>
-                </p>
-                <p>Faltam {{ regra.falta_dias }}</p>
-                <p><strong>Data estimada:</strong> {{ regra.data_prevista }}</p>
-            {% endif %}
+<p><strong>Idade:</strong> {{ tempos.idade }} anos</p>
 
-        </div>
-    {% empty %}
-        <p>Nenhuma regra disponível.</p>
-    {% endfor %}
+<p><strong>Tempo de Contribuição:</strong> {{ tempos.contribuicao }} anos</p>
+
+<p><strong>Tempo Serviço Público:</strong> {{ tempos.servico_publico }} anos</p>
+
+<p><strong>Tempo na Carreira:</strong> {{ tempos.carreira }} anos</p>
+
+<p><strong>Tempo no Cargo:</strong> {{ tempos.cargo }} anos</p>
 
 </div>
+
+
+
+
+<div style="
+background:white;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+
+width:fit-content;
+min-width:600px;
+max-width:700px;
+">
+<h2>Regras de Aposentadoria</h2>
+
+</div>
+
+{% for regra in regras %}
+
+<div style="
+background:white;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+
+width:fit-content;
+min-width:600px;
+max-width:700px;
+">
+
+<h3>{{ regra.nome }}</h3>
+
+<p>
+<strong>Situação:</strong>
+
+{% if regra.apto %}
+<span style="color:green;">APTO</span>
+{% else %}
+<span style="color:red;">NÃO APTO</span>
+{% endif %}
+
+</p>
+
+<p><strong>Fundamento:</strong> {{ regra.fundamento }}</p>
+
+
+<p>
+<strong>Integralidade:</strong>
+
+{% if regra.integralidade %}
+✅
+{% else %}
+❌
+{% endif %}
+
+</p>
+
+
+<p>
+<strong>Paridade:</strong>
+
+{% if regra.paridade %}
+✅
+{% else %}
+❌
+{% endif %}
+
+</p>
+
+
+<h4>Requisitos</h4>
+
+<ul>
+
+{% for r in regra.requisitos %}
+
+<li>
+
+{% if r.cumprido %}
+✅
+{% else %}
+❌
+{% endif %}
+
+{{ r.descricao }}
+
+{% if not r.cumprido and r.faltante > 0 %}
+<span style="color:red;">
+(Faltam {{ r.faltante }} anos)
+</span>
+{% endif %}
+
+</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+{% endfor %}
+
 
 {% endblock %}

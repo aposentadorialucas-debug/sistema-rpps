@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 style="text-align:center; margin-bottom:30px;">
+    📄 CONTRATOS – SELECIONE O CLIENTE
+</h2>
+
+<div style="max-width: 900px; margin: auto;">
+
+    {% if clientes %}
+        {% for cliente in clientes %}
+            <div style="
+                background: white;
+                padding: 20px;
+                margin-bottom: 15px;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            ">
+
+                <div>
+                    <strong>{{ cliente.nome }}</strong><br>
+                    CPF: {{ cliente.cpf }}<br>
+                    Cargo: {{ cliente.cargo_atual }}
+                </div>
+
+                <a href="{% url 'contratos:tipos' cliente.id %}" style="
+                    background: #2c7be5;
+                    color: white;
+                    padding: 10px 15px;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    font-weight: bold;
+                ">
+                    📑 Contratos
+                </a>
+
+            </div>
+        {% endfor %}
+    {% else %}
+        <p style="text-align:center;">Nenhum cliente cadastrado.</p>
+    {% endif %}
+
+</div>
+
+{% endblock %}

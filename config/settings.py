@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'dashboard',
     'calculadora',
     'leis',
+    'contratos',
 ]
 
 MIDDLEWARE = [

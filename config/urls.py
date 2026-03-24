@@ -12,6 +12,7 @@ path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout')
     path('clientes/', include('clientes.urls')),
     path('calculadora/', include('calculadora.urls')),
     path('leis/', include('leis.urls')),
+    path('contratos/', include('contratos.urls')),
 ]
 
 if settings.DEBUG:
