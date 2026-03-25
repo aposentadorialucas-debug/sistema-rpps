@@ -1,190 +1,63 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
+<p align="center">
+<strong>CONTRATO DE PRESTAÇÃO DE SERVIÇOS – PLANEJAMENTO PREVIDENCIÁRIO</strong>
+</p>
 
-<style>
-@page {
-    size: A4;
-    margin: 2.5cm 2cm 2.5cm 3cm;
-}
-
-body {
-    font-family: "Times New Roman", serif;
-    font-size: 12pt;
-    line-height: 1.5;
-    text-align: justify;
-}
-
-.titulo {
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.clausula {
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-.assinatura {
-    margin-top: 60px;
-    text-align: center;
-}
-
-.direita {
-    text-align: right;
-}
-</style>
-
-</head>
-
-<body>
-
-<div class="titulo">
-CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE PLANEJAMENTO PREVIDENCIÁRIO
-</div>
+<br/>
 
 <p>
-Pelo presente instrumento particular, de um lado:
-GALLI & MOREIRA ASSESSORIA PREVIDENCIÁRIA, pessoa jurídica de direito privado, inscrita no CNPJ sob nº 47.172.618/0001-00, com sede na cidade de Rio Claro/SP, na Avenida 22A, nº 237, Vila Indaiá, doravante denominada simplesmente CONTRATADA;
+Pelo presente instrumento particular, de um lado GALLI E MOREIRA ASSESSORIA PREVIDENCIÁRIA, inscrita no CNPJ nº 47.172.618/0001-00, doravante denominada CONTRATADA.
 </p>
 
 <p>
-CONTRATANTE: {{ cliente.nome }}, nacionalidade {{ cliente.nacionalidade|default:"" }}, estado civil {{ cliente.estado_civil|default:"" }}, profissão {{ cliente.cargo_atual|default:"" }}, portador(a) do RG nº {{ cliente.rg|default:"" }} e CPF nº {{ cliente.cpf|default:"" }}, residente e domiciliado(a) à {{ cliente.endereco|default:"" }}{% if cliente.bairro %}, {{ cliente.bairro }}{% endif %}{% if cliente.cidade %}, {{ cliente.cidade }}{% endif %}{% if cliente.estado %}/{{ cliente.estado }}{% endif %}{% if cliente.cep %}, CEP {{ cliente.cep }}{% endif %}, doravante denominado(a) simplesmente CONTRATANTE;
+E de outro lado {{ cliente.nome }}, nacionalidade {{ cliente.nacionalidade|default:"" }}, estado civil {{ cliente.estado_civil|default:"" }}, profissão {{ cliente.cargo_atual|default:"" }}, portador(a) do RG nº {{ cliente.rg|default:"" }} e CPF nº {{ cliente.cpf|default:"" }}, residente à {{ cliente.endereco|default:"" }}{% if cliente.bairro %}, {{ cliente.bairro }}{% endif %}{% if cliente.cidade %}, {{ cliente.cidade }}{% endif %}{% if cliente.estado %}/{{ cliente.estado }}{% endif %}{% if cliente.cep %}, CEP {{ cliente.cep }}{% endif %}, denominado CONTRATANTE.
 </p>
 
 <p>
-Têm entre si justo e contratado o que segue:
+As partes resolvem celebrar o presente contrato de prestação de serviços de planejamento previdenciário.
 </p>
 
-<div class="clausula">
-CLÁUSULA 1ª – DO OBJETO
-</div>
+<br/>
+
+<p><strong>CLÁUSULA 1 – DO OBJETO</strong></p>
 
 <p>
-1.1. O presente contrato tem por objeto a prestação de serviços profissionais de PLANEJAMENTO PREVIDENCIÁRIO, consistentes em:
+Prestação de serviços técnicos especializados de planejamento previdenciário no âmbito do RPPS.
 </p>
+
+<br/>
+
+<p><strong>CLÁUSULA 2 – DOS HONORÁRIOS</strong></p>
 
 <p>
-a) Análise da vida contributiva do CONTRATANTE;<br>
-b) Estudo das regras vigentes de aposentadoria (RGPS e/ou RPPS, conforme o caso);<br>
-c) Simulação de cenários possíveis de aposentadoria;<br>
-d) Indicação da melhor estratégia previdenciária;
+Valor fixo para elaboração do planejamento previdenciário.
 </p>
 
-<p>
-1.2. O serviço não compreende, salvo contratação em separado, o protocolo de requerimentos administrativos ou judiciais
-</p>
+<br/>
 
-<div class="clausula">
-CLÁUSULA 2ª – DAS OBRIGAÇÕES DA CONTRATADA
-</div>
-
-<p>
-2.1. A CONTRATADA compromete-se a:
-</p>
-
-<p>
-a) Prestar os serviços com zelo, ética e observância da legislação previdenciária vigente;<br>
-b) Manter sigilo absoluto sobre todas as informações fornecidas pelo CONTRATANTE;<br>
-c) Entregar o relatório de planejamento previdenciário em prazo razoável, conforme complexidade do caso;<br>
-d) Prestar esclarecimentos técnicos ao CONTRATANTE sobre o conteúdo do planejamento.
-</p>
-
-<div class="clausula">
-CLÁUSULA 3ª – DAS OBRIGAÇÕES DO CONTRATANTE
-</div>
-
-<p>
-3.1. O CONTRATANTE compromete-se a:
-</p>
-
-<p>
-a) Fornecer todos os documentos e informações necessários à correta elaboração do planejamento;<br>
-b) Garantir a veracidade das informações prestadas;<br>
-c) Efetuar o pagamento do valor ajustado nos prazos acordados.
-</p>
-
-<p>
-3.2. A CONTRATADA não reterá documentos originais, sendo responsabilidade do CONTRATANTE a guarda dos mesmos.
-</p>
-
-<div class="clausula">
-CLÁUSULA 4ª – DO VALOR E DA FORMA DE PAGAMENTO
-</div>
-
-<p>
-4.1. Pelos serviços ora contratados, o CONTRATANTE pagará à CONTRATADA o valor certo e ajustado de:
-</p>
-
-<p>
-R$ 750,00 (setecentos e cinquenta reais).
-</p>
-
-<p>
-4.2. O pagamento será efetuado na hora da contratação 
-</p>
-
-<p>
-4.3. O início da execução dos serviços fica condicionado ao pagamento integral 
-</p>
-
-<div class="clausula">
-CLÁUSULA 5ª – DA NATUREZA DO SERVIÇO
-</div>
-
-<p>
-5.1. O planejamento previdenciário constitui serviço de meio, e não de resultado, não garantindo concessão de benefício, valor específico de aposentadoria ou aprovação por órgão previdenciário.
-</p>
-
-<p>
-5.2. Os cálculos, simulações e projeções constantes do planejamento previdenciário serão elaborados com o auxílio de programa profissional especializado em cálculos judiciais e previdenciários, reconhecido no meio jurídico, visando assegurar maior confiabilidade técnica aos resultados apresentados.
-</p>
-
-<div class="clausula">
-CLÁUSULA 6ª – DA RESCISÃO
-</div>
-
-<p>
-6.1. O presente contrato poderá ser rescindido por qualquer das partes, a qualquer tempo, mediante comunicação por escrito.
-</p>
-
-<p>
-6.2. Em caso de rescisão por iniciativa do CONTRATANTE após o início da execução dos serviços, não haverá devolução dos valores já pagos, em razão da natureza técnica do serviço
-</p>
-
-<div class="clausula">
-CLÁUSULA 7ª – DA RESPONSABILIDADE
-</div>
-
-<p>
-7.1. A CONTRATADA não se responsabiliza por:
-</p>
-
-<p>
-a) Indeferimento de benefícios por parte de órgãos previdenciários;<br>
-b) Erros ou omissões decorrentes de informações incorretas fornecidas pelo CONTRATANTE;<br>
-c) Alterações futuras na legislação previdenciária.
-</p>
-
-<br><br>
-
-<p class="direita">
+<p align="right">
 Rio Claro/SP, {{ data_hoje }}
 </p>
 
-<div class="assinatura">
+<br/><br/><br/>
 
-<p>________________________________________</p>
-<p>Galli & Moreira Assessoria Previdenciária - CNPJ nº 47.172.618/0001-00</p>
+<p align="center">
+________________________________________
+</p>
 
-<br><br>
+<p align="center">
+Galli & Moreira Assessoria Previdenciária
+</p>
 
-<p>________________________________________</p>
-CONTRATANTE: </p> {{ cliente.nome }} </p> CPF nº {{ cliente.cpf|default:"" }}</p> 
+<br/><br/>
 
-</div>
+<p align="center">
+________________________________________
+</p>
 
-</body>
-</html>
+<p align="center">
+{{ cliente.nome }}
+</p>
+
+<p align="center">
+CPF nº {{ cliente.cpf }}
+</p>
