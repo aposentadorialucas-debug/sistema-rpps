@@ -2,8 +2,11 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from clientes.models import Cliente
 from .services.pdf_service import gerar_pdf_contrato
+from django.contrib.auth.decorators import login_required
 
 
+
+@login_required
 def lista(request):
     clientes = Cliente.objects.all()
     return render(request, 'contratos/lista.html', {
@@ -19,7 +22,7 @@ def tipos_contrato(request, cliente_id):
         'cliente': cliente
     })
 
-
+@login_required
 def gerar_contrato(request, cliente_id, tipo):
 
     cliente = get_object_or_404(Cliente, id=cliente_id)

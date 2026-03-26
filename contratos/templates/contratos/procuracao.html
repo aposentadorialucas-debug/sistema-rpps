@@ -2,36 +2,82 @@
 <strong>PROCURAÇÃO</strong>
 </p>
 
-<br/>
+<br/><br/>
 
 <p>
-OUTORGANTE: {{ cliente.nome }}, nacionalidade {{ cliente.nacionalidade|default:"" }}, estado civil {{ cliente.estado_civil|default:"" }}, profissão {{ cliente.cargo_atual|default:"" }}, portador(a) do RG nº {{ cliente.rg|default:"" }} e CPF nº {{ cliente.cpf|default:"" }}, residente à {{ cliente.endereco|default:"" }}{% if cliente.bairro %}, {{ cliente.bairro }}{% endif %}{% if cliente.cidade %}, {{ cliente.cidade }}{% endif %}{% if cliente.estado %}/{{ cliente.estado }}{% endif %}{% if cliente.cep %}, CEP {{ cliente.cep }}{% endif %}.
-</p>
-
-<p>
-OUTORGADO: GALLI E MOREIRA ASSESSORIA PREVIDENCIÁRIA, CNPJ nº 47.172.618/0001-00, com sede em Rio Claro/SP.
-</p>
-
-<p>
-Pelo presente instrumento particular, o OUTORGANTE nomeia e constitui como seu bastante procurador o OUTORGADO, concedendo poderes para representá-lo perante órgãos públicos, especialmente junto ao RPPS, podendo requerer, protocolar, acompanhar processos administrativos, apresentar documentos e praticar todos os atos necessários.
+Por este instrumento particular de mandato.
 </p>
 
 <br/>
+
+<p>
+OUTORGANTE: {{ cliente.nome }}, {{ cliente.nacionalidade|default:"brasileiro(a)" }}, {{ cliente.estado_civil|default:"" }}, {{ cliente.cargo_atual|default:"" }}, portador(a) da cédula de identidade RG nº {{ cliente.rg|default:"" }} e do CPF nº {{ cliente.cpf|default:"" }}, residente e domiciliado(a) à {{ cliente.endereco|default:"" }}{% if cliente.bairro %}, {{ cliente.bairro }}{% endif %}{% if cliente.cidade %}, {{ cliente.cidade }}{% endif %}{% if cliente.estado %}, {{ cliente.estado }}{% endif %}{% if cliente.cep %}, CEP {{ cliente.cep }}{% endif %}.
+</p>
+
+<br/><br/>
+
+<p>
+OUTORGADOS:
+</p>
+
+<br/><br/><p>
+Nicolas da Costa Moreira Galli, brasileiro, solteiro, autônomo, portador do RG nº 54.270.479-1, inscrito no CPF sob nº 363.732.138-62, residente e domiciliado à Rua 13 RF, nº 72, Residencial Florença, Rio Claro, São Paulo, CEP: 13506-282.
+</p>
+
+<br/><br/><p>
+Lucas Cardoso Ribeiro, brasileiro, solteiro, autônomo, portador do RG nº 54.556.346-X, inscrito no CPF sob nº 353.293.128-17, residente e domiciliado à Rua 1A, nº 135, Vilas do Sobrado, Rio Claro, São Paulo, CEP: 13505-210.
+</p>
+
+<br/><br/>
+
+<p align="center">
+<strong>PODERES</strong>
+</p>
+
+<br/><br/><p>
+Pelo presente instrumento, o Outorgante nomeia e constitui os Outorgados, em conjunto ou separadamente, com plenos poderes para representá-lo(a) perante {{ cliente.orgao_responsavel }}, para todos os fins necessários, inclusive, mas não se limitando a:
+</p>
+
+<br/><br/><p>• Solicitar, requerer, retirar ou acompanhar a emissão de documentos, certidões, declarações, atestados ou quaisquer outros papéis inerentes à função pública do Outorgante;</p>
+
+<br/><p>• Assinar requerimentos, protocolos, recibos, declarações, termos de retirada ou entrega de documentos;</p>
+
+<br/><p>• Obter informações, realizar consultas, acompanhar trâmites administrativos, receber intimações ou comunicações, bem como acompanhar ou promover diligências necessárias;</p>
+
+<br/><p>• Dar recibo, dar quitação ou assinar qualquer documento relacionado à representação conferida.</p>
+
+<br/><br/>
+
+<p>
+LOCAL E DATA:
+</p>
+
+<br/><br/>
 
 <p align="right">
 Rio Claro/SP, {{ data_hoje }}
 </p>
 
-<br/><br/><br/>
+<br/><br/><br/><br/>
+
+<p>
+ASSINATURA:
+</p>
+
+<br/><br/><br/><br/><br/>
 
 <p align="center">
-________________________________________
+________________________________________<br/>
 </p>
 
 <p align="center">
-{{ cliente.nome }}
+Nome: {{ cliente.nome }}
 </p>
-
+<br/>
 <p align="center">
-CPF nº {{ cliente.cpf }}
+CPF nº: {{ cliente.cpf }}
+</p>
+<br/>
+<p align="center">
+RG nº: {{ cliente.rg }}
 </p>

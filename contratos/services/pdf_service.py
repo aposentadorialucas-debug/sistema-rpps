@@ -1,11 +1,13 @@
 from io import BytesIO
 from datetime import datetime
 import re
+import os
 
 from django.template.loader import render_to_string
+from django.conf import settings
 
 from reportlab.lib.pagesizes import A4
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import cm
 from reportlab.lib.enums import TA_JUSTIFY
@@ -16,20 +18,12 @@ def limpar_html_para_reportlab(html):
     Remove tags não suportadas pelo ReportLab
     """
 
-    # Corrigir <br>
     html = html.replace("<br>", "<br/>")
     html = html.replace("<br />", "<br/>")
 
-    # Remover DOCTYPE
     html = re.sub(r"<!DOCTYPE.*?>", "", html, flags=re.IGNORECASE)
-
-    # Remover tags estruturais
     html = re.sub(r"</?(html|head|body|style|meta|link).*?>", "", html, flags=re.IGNORECASE)
-
-    # Remover divs
     html = re.sub(r"</?div.*?>", "", html, flags=re.IGNORECASE)
-
-    # Remover quebras duplicadas
     html = re.sub(r"\n+", " ", html)
 
     return html
@@ -64,7 +58,7 @@ def gerar_pdf_contrato(cliente, tipo):
 
     html = render_to_string(template_path, contexto)
 
-    # LIMPAR HTML
+    # Limpar HTML
     html = limpar_html_para_reportlab(html)
 
     doc = SimpleDocTemplate(
@@ -83,13 +77,23 @@ def gerar_pdf_contrato(cliente, tipo):
         parent=styles['Normal'],
         fontName='Times-Roman',
         fontSize=12,
-        leading=16,
+        leading=18,
         alignment=TA_JUSTIFY,
-        spaceAfter=6,
+        firstLineIndent=20,
+        spaceAfter=8,
     )
 
     story = []
 
+    # LOGO
+    logo_path = os.path.join(settings.BASE_DIR, 'static', 'css', 'img', 'logo1.png')
+
+    if os.path.exists(logo_path):
+        logo = Image(logo_path, width=450, height=120)
+        story.append(logo)
+        story.append(Spacer(1, 12))
+
+    # TEXTO
     story.append(Paragraph(html, estilo_contrato))
     story.append(Spacer(1, 12))
 
